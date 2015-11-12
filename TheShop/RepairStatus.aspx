@@ -18,6 +18,20 @@
         </br>
         </br>
         </br>
-        <asp:GridView ID="gvRepairs" runat="server"></asp:GridView>
+        <asp:GridView ID="gvRepairs" runat="server" AutoGenerateColumns="False" DataKeyNames="RepairID" DataSourceID="sqlRepairStatus">
+            <Columns>
+                <asp:BoundField DataField="RepairID" HeaderText="RepairID" ReadOnly="True" SortExpression="RepairID" />
+                <asp:BoundField DataField="RepairStartDt" HeaderText="RepairStartDt" SortExpression="RepairStartDt" />
+                <asp:BoundField DataField="EstimatedFinishDate" HeaderText="EstimatedFinishDate" SortExpression="EstimatedFinishDate" />
+                <asp:BoundField DataField="CarID" HeaderText="CarID" SortExpression="CarID" />
+                <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID" />
+                <asp:BoundField DataField="JobID" HeaderText="JobID" SortExpression="JobID" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="sqlRepairStatus" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Repair] WHERE ([RepairID] = @RepairID)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="RepairID" QueryStringField="RepairID" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 </asp:Content>
