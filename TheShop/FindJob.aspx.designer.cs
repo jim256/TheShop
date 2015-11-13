@@ -10,25 +10,25 @@
 namespace TheShop {
     
     
-    public partial class FindRepair {
+    public partial class FindJob {
         
         /// <summary>
-        /// lblRepairID control.
+        /// lblJobID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRepairID;
+        protected global::System.Web.UI.WebControls.Label lblJobID;
         
         /// <summary>
-        /// txtRepairID control.
+        /// txtJobID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRepairID;
+        protected global::System.Web.UI.WebControls.TextBox txtJobID;
         
         /// <summary>
         /// lblPIN control.
@@ -49,12 +49,12 @@ namespace TheShop {
         protected global::System.Web.UI.WebControls.TextBox txtPIN;
         
         /// <summary>
-        /// cmdFindRepair control.
+        /// cmdFindJob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdFindRepair;
+        protected global::System.Web.UI.WebControls.Button cmdFindJob;
     }
 }

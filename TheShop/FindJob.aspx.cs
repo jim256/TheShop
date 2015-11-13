@@ -8,7 +8,7 @@ using System.Data;
 
 namespace TheShop
 {
-    public partial class FindRepair : Page
+    public partial class FindJob : Page
     {
         public string url { get; private set; }
 
@@ -16,11 +16,11 @@ namespace TheShop
         {
         }
 
-        protected void cmdFindRepair_Click(object sender, EventArgs e)
+        protected void cmdFindJob_Click(object sender, EventArgs e)
         {
-            string repairID = txtRepairID.Text;
+            string jobID = txtJobID.Text;
             string url = "~/RepairStatus.aspx";
-            url += "?repairID=" + repairID.ToString();
+            url += "?jobID=" + jobID.ToString();
             Response.Redirect(url);
         }
     }

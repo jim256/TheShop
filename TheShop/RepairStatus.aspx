@@ -18,7 +18,8 @@
         </br>
         </br>
         </br>
-        <asp:GridView ID="gvRepairs" runat="server" AutoGenerateColumns="False" DataKeyNames="RepairID" DataSourceID="sqlRepairStatus">
+        <asp:GridView ID="gvRepairs" runat="server" AutoGenerateColumns="False" DataKeyNames="RepairID" DataSourceID="sqlRepairStatus" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="RepairID" HeaderText="RepairID" ReadOnly="True" SortExpression="RepairID" />
                 <asp:BoundField DataField="RepairStartDt" HeaderText="RepairStartDt" SortExpression="RepairStartDt" />
@@ -27,10 +28,20 @@
                 <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID" />
                 <asp:BoundField DataField="JobID" HeaderText="JobID" SortExpression="JobID" />
             </Columns>
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+            <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="sqlRepairStatus" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Repair] WHERE ([RepairID] = @RepairID)">
+        <asp:SqlDataSource ID="sqlRepairStatus" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Repair] WHERE ([JobID] = @JobID)">
             <SelectParameters>
-                <asp:QueryStringParameter Name="RepairID" QueryStringField="RepairID" Type="Int32" />
+                <asp:QueryStringParameter Name="JobID" QueryStringField="JobID" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
