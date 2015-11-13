@@ -10,8 +10,6 @@ namespace TheShop
 {
     public partial class FindJob : Page
     {
-        public string url { get; private set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
         }

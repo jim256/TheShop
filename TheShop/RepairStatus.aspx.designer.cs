@@ -22,67 +22,40 @@ namespace TheShop {
         protected global::System.Web.UI.WebControls.Image imgCurrentStatus;
         
         /// <summary>
-        /// lblLabelForEstCompDt control.
+        /// lvPIN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLabelForEstCompDt;
+        protected global::System.Web.UI.WebControls.LoginView lvPIN;
         
         /// <summary>
-        /// lblSpacer1 control.
+        /// gvJobStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSpacer1;
+        protected global::System.Web.UI.WebControls.GridView gvJobStatus;
         
         /// <summary>
-        /// lblEstCompDt control.
+        /// sqlJobStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstCompDt;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlJobStatus;
         
         /// <summary>
-        /// lblLabelForCurrentStatus control.
+        /// gvRepairStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLabelForCurrentStatus;
-        
-        /// <summary>
-        /// lblSpacer2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSpacer2;
-        
-        /// <summary>
-        /// lblCurrentStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCurrentStatus;
-        
-        /// <summary>
-        /// gvRepairs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRepairs;
+        protected global::System.Web.UI.WebControls.GridView gvRepairStatus;
         
         /// <summary>
         /// sqlRepairStatus control.
