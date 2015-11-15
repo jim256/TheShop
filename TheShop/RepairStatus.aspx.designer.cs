@@ -13,13 +13,13 @@ namespace TheShop {
     public partial class RepairStatus {
         
         /// <summary>
-        /// imgCurrentStatus control.
+        /// lblSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgCurrentStatus;
+        protected global::System.Web.UI.WebControls.Label lblSuccess;
         
         /// <summary>
         /// lvPIN control.
@@ -31,13 +31,49 @@ namespace TheShop {
         protected global::System.Web.UI.WebControls.LoginView lvPIN;
         
         /// <summary>
-        /// gvJobStatus control.
+        /// dvStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvJobStatus;
+        protected global::System.Web.UI.WebControls.DetailsView dvStatus;
+        
+        /// <summary>
+        /// uploader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl uploader;
+        
+        /// <summary>
+        /// FileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        
+        /// <summary>
+        /// UploadButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UploadButton;
+        
+        /// <summary>
+        /// lstImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lstImages;
         
         /// <summary>
         /// sqlJobStatus control.
@@ -49,21 +85,12 @@ namespace TheShop {
         protected global::System.Web.UI.WebControls.SqlDataSource sqlJobStatus;
         
         /// <summary>
-        /// gvRepairStatus control.
+        /// sqlImages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRepairStatus;
-        
-        /// <summary>
-        /// sqlRepairStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sqlRepairStatus;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlImages;
     }
 }

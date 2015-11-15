@@ -1,15 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="TheShop.Admin.Admin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="History.aspx.cs" Inherits="TheShop.Admin.History" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     <br />
+    <h3>Past Repairs</h3>
     <br />
-    <h3>Current Repairs</h3>
-    <br />
-    <asp:GridView ID="gvCurrentRepairs" CssClass="table table-striped table-condensed table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="JobID" DataSourceID="sqlCurrentRepairs" GridLines="None" AllowPaging="True" AllowSorting="True">
+    <asp:GridView ID="gvPastRepairs" CssClass="table table-striped table-condensed table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="JobID" DataSourceID="sqlPastRepairs" GridLines="None" AllowPaging="True" AllowSorting="True">
         <Columns>
-            <asp:TemplateField ShowHeader="False">
-                <ItemTemplate>
-                    <asp:Button ID="Button1" CssClass="btn btn-sm btn-primary" PostBackUrl='<%# string.Format("~/RepairStatus?jobID={0}", Eval("JobID")) %>' runat="server" CausesValidation="false" CommandName="" Text="Details" />
-                </ItemTemplate>
-            </asp:TemplateField>
             <asp:BoundField DataField="JobID" HeaderText="JobID" ReadOnly="True" SortExpression="JobID" InsertVisible="False" ShowHeader="False" Visible="False" />
             <asp:TemplateField HeaderText="Status" SortExpression="Status">
                 <EditItemTemplate>
@@ -44,14 +39,7 @@
                     <asp:Label ID="Label7" runat="server" Text='<%# Bind("CarModel") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Notes" SortExpression="Notes">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Notes") %>' TextMode="MultiLine" Rows="10"></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("Notes") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+            <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             
         </Columns>
@@ -65,7 +53,7 @@
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
     <br />
-    <asp:SqlDataSource ID="sqlCurrentRepairs" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job] j inner join Customer c ON j.CustomerID = c.CustomerID inner join Car ca ON ca.CarID = j.CarID inner join Status s ON s.StatusID = j.StatusID WHERE j.StatusID != 3" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [CustomerID], [CarID], [Notes], [StatusID]) VALUES (@ReceivedDt, @EstimatedFinishDt, @CustomerID, @CarID, @Notes, @StatusID)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID WHERE [JobID] = @JobID">
+    <asp:SqlDataSource ID="sqlPastRepairs" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job] j inner join Customer c ON j.CustomerID = c.CustomerID inner join Car ca ON ca.CarID = j.CarID inner join Status s ON s.StatusID = j.StatusID WHERE j.StatusID = 3" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [CustomerID], [CarID], [Notes], [StatusID]) VALUES (@ReceivedDt, @EstimatedFinishDt, @CustomerID, @CarID, @Notes, @StatusID)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID WHERE [JobID] = @JobID">
         <DeleteParameters>
             <asp:Parameter Name="JobID" Type="Int32" />
         </DeleteParameters>
@@ -86,6 +74,5 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Status] ORDER BY [Status]"></asp:SqlDataSource>
-
 
 </asp:Content>

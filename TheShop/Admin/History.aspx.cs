@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace TheShop.Admin
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class History : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }
