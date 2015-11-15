@@ -188,6 +188,7 @@
     <Content Include="Account\Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\Jobs\car-crash-lawyer-121.jpg" />
     <Content Include="Images\Jobs\iceman.jpg" />
     <Content Include="Images\z06.jpg" />
     <Content Include="RepairStatus.aspx" />
