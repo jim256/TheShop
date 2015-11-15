@@ -188,6 +188,7 @@
     <Content Include="Account\Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\Jobs\iceman.jpg" />
     <Content Include="Images\z06.jpg" />
     <Content Include="RepairStatus.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -423,9 +424,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\Jobs\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
