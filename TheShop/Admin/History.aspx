@@ -53,7 +53,7 @@
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
     <br />
-    <asp:SqlDataSource ID="sqlPastRepairs" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job] j inner join Customer c ON j.CustomerID = c.CustomerID inner join Car ca ON ca.CarID = j.CarID inner join Status s ON s.StatusID = j.StatusID WHERE j.StatusID = 3" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [CustomerID], [CarID], [Notes], [StatusID]) VALUES (@ReceivedDt, @EstimatedFinishDt, @CustomerID, @CarID, @Notes, @StatusID)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID WHERE [JobID] = @JobID">
+    <asp:SqlDataSource ID="sqlPastRepairs" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job] j inner join Customer c ON j.CustomerID = c.CustomerID inner join Car ca ON ca.CarID = j.CarID inner join Status s ON s.StatusID = j.StatusID WHERE j.StatusID = 6" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [CustomerID], [CarID], [Notes], [StatusID]) VALUES (@ReceivedDt, @EstimatedFinishDt, @CustomerID, @CarID, @Notes, @StatusID)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID WHERE [JobID] = @JobID">
         <DeleteParameters>
             <asp:Parameter Name="JobID" Type="Int32" />
         </DeleteParameters>
