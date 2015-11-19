@@ -2,6 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    
+    THIS IS THE HOME PAGE
 
 </asp:Content>
