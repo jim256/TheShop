@@ -3,6 +3,7 @@
     <br />
     <h3>Current Repairs</h3>
     <br />
+    <asp:Button ID="btnInsert" runat="server" Text="Button" OnClick="btnInsert_Click" />
     <asp:GridView ID="gvCurrentRepairs" CssClass="table table-striped table-condensed table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="JobID" DataSourceID="sqlCurrentRepairs" GridLines="None" AllowPaging="True" AllowSorting="True">
         <Columns>
             <asp:TemplateField ShowHeader="False">
