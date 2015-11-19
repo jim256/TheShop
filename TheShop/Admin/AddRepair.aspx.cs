@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace TheShop.Admin
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class AddRepair : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnInsert_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Admin/AddRepair.aspx");
         }
     }
 }
