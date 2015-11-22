@@ -234,7 +234,7 @@
     <Content Include="Images\Jobs\car-crash-lawyer-121.jpg" />
     <Content Include="Images\Jobs\iceman.jpg" />
     <Content Include="Images\z06.jpg" />
-    <Content Include="index.html" />
+    <Content Include="html\index.html" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\grayscale.js" />

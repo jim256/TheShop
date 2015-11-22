@@ -32,7 +32,7 @@
                 <InsertItemTemplate>
                     <div>
                         <label>Status <span>(*)</span></label><br />
-                        <asp:TextBox runat="server" Text='<%# Bind("StatusID") %>' ID="TextBox5" CssClass="form-control"></asp:TextBox>                        
+                        <asp:DropDownList ID="DropDownStatus" CssClass="form-control" runat="server" DataSourceID="SqlStatus" DataTextField="Status" Width="24%" DataValueField="StatusID" SelectedValue='<%# Bind("StatusID") %>'></asp:DropDownList>                        
                     </div>
                 </InsertItemTemplate>
             </asp:TemplateField>
@@ -140,4 +140,5 @@
             <asp:Parameter Name="CustEmail" Type="String"></asp:Parameter>
         </InsertParameters>
     </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Status] ORDER BY [StatusID]"></asp:SqlDataSource>
 </asp:Content>
