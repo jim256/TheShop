@@ -3,7 +3,7 @@
     <br />
     <h3>Current Repairs</h3>
     <br />
-    <asp:Button ID="btnInsert" runat="server" Text="Button" OnClick="btnInsert_Click" />
+    <asp:Button ID="btnInsert" CssClass="btn btn-default" runat="server" Text="Add New Repair" Width="100%" OnClick="btnInsert_Click" />
     <asp:GridView ID="gvCurrentRepairs" CssClass="table table-striped table-condensed table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="JobID" DataSourceID="sqlCurrentRepairs" GridLines="None" AllowPaging="True" AllowSorting="True">
         <Columns>
             <asp:TemplateField ShowHeader="False">
@@ -24,15 +24,15 @@
             <asp:BoundField DataField="EstimatedFinishDt" HeaderText="Est. Finish Date" SortExpression="EstimatedFinishDt" DataFormatString="{0:d}" />
             <asp:TemplateField HeaderText="Customer" SortExpression="CustomerFirstName">
                 <EditItemTemplate>
-                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("CustomerFirstName") %>'></asp:Label>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("CustomerLastName") %>'></asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("CustFirstName") %>'></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("CustLastName") %>'></asp:Label>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("CustomerFirstName") %>'></asp:Label>
-                    <asp:Label ID="Label5" runat="server" Text='<%# Bind("CustomerLastName") %>'></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("CustFirstName") %>'></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Text='<%# Bind("CustLastName") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="CustomerPhone" HeaderText="Customer Phone" SortExpression="CustomerPhone" ReadOnly="True" />
+            <asp:BoundField DataField="CustPhone" HeaderText="Customer Phone" SortExpression="CustomerPhone" ReadOnly="True" />
             <asp:TemplateField HeaderText="Car" SortExpression="CarMake">
                 <EditItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("CarYear") %>'></asp:Label>
@@ -66,24 +66,38 @@
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
     <br />
-    <asp:SqlDataSource ID="sqlCurrentRepairs" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job] j inner join Customer c ON j.CustomerID = c.CustomerID inner join Car ca ON ca.CarID = j.CarID inner join Status s ON s.StatusID = j.StatusID WHERE j.StatusID != 6" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [CustomerID], [CarID], [Notes], [StatusID]) VALUES (@ReceivedDt, @EstimatedFinishDt, @CustomerID, @CarID, @Notes, @StatusID)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID WHERE [JobID] = @JobID">
+    <asp:SqlDataSource ID="sqlCurrentRepairs" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job] j inner join Status s ON s.StatusID = j.StatusID WHERE j.StatusID != 6" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [Notes], [StatusID], [CustFirstName], [CustLastName], [CarMake], [CarYear], [CarColor], [CarModel], [CustPhone], [CustEmail]) VALUES (@ReceivedDt, @EstimatedFinishDt, @Notes, @StatusID, @CustFirstName, @CustLastName, @CarMake, @CarYear, @CarColor, @CarModel, @CustPhone, @CustEmail)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID, [CustFirstName] = @CustFirstName, [CustLastName] = @CustLastName, [CarMake] = @CarMake, [CarYear] = @CarYear, [CarColor] = @CarColor, [CarModel] = @CarModel, [CustPhone] = @CustPhone, [CustEmail] = @CustEmail WHERE [JobID] = @JobID">
         <DeleteParameters>
             <asp:Parameter Name="JobID" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter DbType="Date" Name="ReceivedDt" />
             <asp:Parameter DbType="Date" Name="EstimatedFinishDt" />
-            <asp:Parameter Name="CustomerID" Type="Int32" />
-            <asp:Parameter Name="CarID" Type="Int32" />
             <asp:Parameter Name="Notes" Type="String" />
             <asp:Parameter Name="StatusID" Type="Int32" />
+            <asp:Parameter Name="CustFirstName" Type="String" />
+            <asp:Parameter Name="CustLastName" Type="String" />
+            <asp:Parameter Name="CarMake" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CarYear" Type="Int32"></asp:Parameter>
+            <asp:Parameter Name="CarColor" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CarModel" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CustPhone" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CustEmail" Type="String"></asp:Parameter>
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter DbType="Date" Name="ReceivedDt" />
             <asp:Parameter DbType="Date" Name="EstimatedFinishDt" />
             <asp:Parameter Name="Notes" Type="String" />
             <asp:Parameter Name="StatusID" Type="Int32" />
-            <asp:Parameter Name="JobID" Type="Int32" />
+            <asp:Parameter Name="CustFirstName" Type="String" />
+            <asp:Parameter Name="CustLastName" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CarMake" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CarYear" Type="Int32"></asp:Parameter>
+            <asp:Parameter Name="CarColor" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CarModel" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CustPhone" Type="String"></asp:Parameter>
+            <asp:Parameter Name="CustEmail" Type="String"></asp:Parameter>
+            <asp:Parameter Name="JobID" Type="Int32"></asp:Parameter>
         </UpdateParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Status] ORDER BY [Status]"></asp:SqlDataSource>
