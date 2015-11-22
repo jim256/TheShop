@@ -30,6 +30,14 @@ namespace TheShop.Admin
 
             
         }
+
+        protected void sqlAddRepair_Inserted(object sender, SqlDataSourceStatusEventArgs e)
+        {
+            if (e.Exception == null || e.ExceptionHandled)
+            {
+                Response.Redirect("~/admin/admin.aspx");
+            }
+        }
     }
     
 }

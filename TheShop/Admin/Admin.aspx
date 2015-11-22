@@ -11,7 +11,7 @@
                     <asp:Button ID="Button1" CssClass="btn btn-sm btn-primary" PostBackUrl='<%# string.Format("~/RepairStatus?jobID={0}", Eval("JobID")) %>' runat="server" CausesValidation="false" CommandName="" Text="Details" />
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="JobID" HeaderText="JobID" ReadOnly="True" SortExpression="JobID" InsertVisible="False" ShowHeader="False" Visible="False" />
+            <asp:BoundField DataField="JobID" HeaderText="JobID" ReadOnly="True" SortExpression="JobID" InsertVisible="False" ShowHeader="False" Visible="True" />
             <asp:TemplateField HeaderText="Status" SortExpression="Status">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownStatus" CssClass="form-control" runat="server" DataSourceID="SqlStatus" DataTextField="Status" DataValueField="StatusID" SelectedValue='<%# Bind("StatusID") %>'></asp:DropDownList>
@@ -53,8 +53,16 @@
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("Notes") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:LinkButton runat="server" Text="Update" CommandName="Update" CausesValidation="True" ID="LinkButton1"></asp:LinkButton>&nbsp;<asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" CausesValidation="False" ID="LinkButton2"></asp:LinkButton>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton runat="server" Text="Edit" CommandName="Edit" CausesValidation="False" ID="LinkButton1"></asp:LinkButton>&nbsp;<asp:LinkButton runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm('Are you sure you want to delete?')" CausesValidation="False" ID="LinkButton2"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+
+
         </Columns>
         <EditRowStyle BackColor="#cccccc" />
         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="Black" />
