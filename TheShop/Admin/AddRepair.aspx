@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddRepair.aspx.cs" Inherits="TheShop.Admin.AddRepair" %>
+﻿<%@ Page Title="Add Repair" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddRepair.aspx.cs" Inherits="TheShop.Admin.AddRepair" %>
     
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -31,7 +31,7 @@
             <asp:TemplateField HeaderText="StatusID" SortExpression="StatusID" ShowHeader="False">
                 <InsertItemTemplate>
                     <div>
-                        <label>Status <span>(*)</span></label><br />
+                        <label>Status <span></span></label><br />
                         <asp:DropDownList ID="DropDownStatus" CssClass="form-control" runat="server" DataSourceID="SqlStatus" DataTextField="Status" Width="24%" DataValueField="StatusID" SelectedValue='<%# Bind("StatusID") %>'></asp:DropDownList>                        
                     </div>
                 </InsertItemTemplate>
@@ -57,7 +57,7 @@
             <asp:TemplateField HeaderText="CustPhone" SortExpression="CustPhone" ShowHeader="False">
                 <InsertItemTemplate>
                     <div>
-                        <label>Customer Phone <span>(*)</span></label><br />
+                        <label>Customer Phone <span></span></label><br />
                         <asp:TextBox runat="server" Text='<%# Bind("CustPhone") %>' ID="TextBox11" CssClass="form-control"></asp:TextBox>                      
                     </div>
                 </InsertItemTemplate>
@@ -65,7 +65,7 @@
             <asp:TemplateField HeaderText="CustEmail" SortExpression="CustEmail" ShowHeader="False">
                 <InsertItemTemplate>
                     <div>
-                        <label>Customer Email <span>(*)</span></label><br />
+                        <label>Customer Email <span></span></label><br />
                         <asp:TextBox runat="server" Text='<%# Bind("CustEmail") %>' ID="TextBox12" CssClass="form-control"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1"  runat="server" display="Dynamic" ErrorMessage="Please enter a valid Email: Eg. johndoe@mail.com" ControlToValidate="TextBox12" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </div>
@@ -101,7 +101,7 @@
             <asp:TemplateField HeaderText="CarColor" SortExpression="CarColor" ShowHeader="False">
                 <InsertItemTemplate>
                     <div>
-                        <label>Vehicle Color <span>(*)</span></label><br />
+                        <label>Vehicle Color <span></span></label><br />
                         <asp:TextBox runat="server" Text='<%# Bind("CarColor") %>' ID="TextBox9" CssClass="form-control"></asp:TextBox>
                     </div>
                 </InsertItemTemplate>
@@ -109,7 +109,7 @@
             <asp:TemplateField HeaderText="Notes" SortExpression="Notes" ShowHeader="False">
                 <InsertItemTemplate>
                     <div>
-                        <label>Notes <span>(*)</span></label><br />
+                        <label>Notes <span></span></label><br />
                         <asp:TextBox runat="server" Text='<%# Bind("Notes") %>' ID="TextBox1" TextMode="MultiLine" CssClass="form-control" Height ="100px"></asp:TextBox>
                     </div>
                 </InsertItemTemplate>
@@ -124,7 +124,7 @@
         </Fields>
     </asp:DetailsView>
     
-    <asp:SqlDataSource ID="sqlAddRepair" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job]" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [Notes], [StatusID], [CustFirstName], [CustLastName], [CarMake], [CarYear], [CarColor], [CarModel], [CustPhone], [CustEmail]) VALUES (@ReceivedDt, @EstimatedFinishDt, @Notes, @StatusID, @CustFirstName, @CustLastName, @CarMake, @CarYear, @CarColor, @CarModel, @CustPhone, @CustEmail)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID, [CustFirstName] = @CustFirstName, [CustLastName] = @CustLastName, [CarMake] = @CarMake, [CarYear] = @CarYear, [CarColor] = @CarColor, [CarModel] = @CarModel, [CustPhone] = @CustPhone, [CustEmail] = @CustEmail WHERE [JobID] = @JobID" OnInserted="sqlAddRepair_Inserted">      
+    <asp:SqlDataSource ID="sqlAddRepair" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job]" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [Notes], [StatusID], [CustFirstName], [CustLastName], [CarMake], [CarYear], [CarColor], [CarModel], [CustPhone], [CustEmail]) VALUES (@ReceivedDt, @EstimatedFinishDt, @Notes, @StatusID, @CustFirstName, @CustLastName, @CarMake, @CarYear, @CarColor, @CarModel, @CustPhone, @CustEmail);" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID, [CustFirstName] = @CustFirstName, [CustLastName] = @CustLastName, [CarMake] = @CarMake, [CarYear] = @CarYear, [CarColor] = @CarColor, [CarModel] = @CarModel, [CustPhone] = @CustPhone, [CustEmail] = @CustEmail WHERE [JobID] = @JobID" OnInserted="sqlAddRepair_Inserted">      
         <InsertParameters>
             <asp:Parameter DbType="Date" Name="ReceivedDt"></asp:Parameter>
             <asp:Parameter DbType="Date" Name="EstimatedFinishDt"></asp:Parameter>

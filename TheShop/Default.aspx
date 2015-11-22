@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TheShop._Default" %>
+﻿<%@ Page Title="The Shop Home" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TheShop._Default" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Track Your Vehicle Repair</h2>
-                    <p>You can watch the projess of your repair right here.</p>
+                    <p>You can check on the projess of your repair right here.</p>
                     <asp:HyperLink class="btn btn-default btn-lg" ID="HyperLink1" runat="server" NavigateUrl="~/FindJob.aspx">FIND YOUR REPAIR</asp:HyperLink>
                 </div>
             </div>
