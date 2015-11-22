@@ -50,22 +50,41 @@
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                        <ul class="nav navbar-nav">
+                    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">                       
+                         <ul class="nav navbar-nav">
                             <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                             <li class="hidden">
                                 <a href="#page-top"></a>
                             </li>
-                            <li>
-                                <a class="page-scroll" href="#about">About</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="#download">Download</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="#contact">Contact</a>
-                            </li>
-                        </ul>
+                            <asp:LoginView runat="server" ViewStateMode="Disabled">
+                                <AnonymousTemplate>
+                                    <li>
+                                        <a class="page-scroll" href="#about">About</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#download">Track Repair</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#contact">Contact</a>
+                                    </li>
+                                    <li>
+                                    <a class="page-scroll" href="Account/Login">Login</a>
+                                    </li>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    <li>
+                                        <a class="page-scroll" href="#about">Admin</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#download">Add Repair</a>
+                                    </li>
+                                    <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                    <li>
+                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    </li>
+                                </LoggedInTemplate>
+                            </asp:LoginView>                            
+                        </ul>                      
                     </div>
                     <!-- /.navbar-collapse -->
                 </div>

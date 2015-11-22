@@ -36,9 +36,9 @@
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                    <h2>Track Your Vehicle Repair</h2>
+                    <p>You can watch the projess of your repair right here.</p>
+                    <asp:HyperLink class="btn btn-default btn-lg" ID="HyperLink1" runat="server" NavigateUrl="~/FindJob.aspx">FIND YOUR REPAIR</asp:HyperLink>
                 </div>
             </div>
         </div>
@@ -50,14 +50,14 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Your Neighborhood Auto Body Shop</h2> 
                     <div style="float:left" class="text-left" >
-                        <h3>Contact Us: </h3>
+                        <h3 class="text-center">Contact Us: </h3>
                         <p>The Shop Collision Center and Glass</p>
                         <p>633 E Broadway</p>
                         <p>Long Beach, CA 90802</p>
                         <p>Local Phone: (562) 590-3900</p>
                     </div>
                     <div style="float:right" class="text-right">
-                        <h3>We are open: </h3>
+                        <h3 class="text-center">We are open: </h3>
                         <table style="width:100%" class="container">
                             <tr>
                                 <td class="text-left" style="padding-right: 10px; padding-bottom: 12px; font-size:20px;">Monday </td>
