@@ -22,15 +22,6 @@ namespace TheShop {
         protected global::System.Web.UI.WebControls.Label lblSuccess;
         
         /// <summary>
-        /// lvPIN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView lvPIN;
-        
-        /// <summary>
         /// dvStatus control.
         /// </summary>
         /// <remarks>

@@ -13,7 +13,15 @@ namespace TheShop.Admin
         {
             //DropDownList ddltemp = new DropDownList();
             DropDownList ddlYear = (DropDownList)DetailsView1.FindControl("ddlYear");
-            int curYear = DateTime.Now.AddYears(1).Year;
+            int curYear = DateTime.Now.Year;
+            int newestYear = curYear + 1;
+
+            ListItem tmpItem = new ListItem();
+
+            tmpItem.Value = newestYear.ToString();
+            tmpItem.Text = newestYear.ToString();
+
+            ddlYear.Items.Add(tmpItem);
 
             for (int i = 1; i < 120; ++i)
             {
