@@ -13,22 +13,31 @@ namespace TheShop.Admin {
     public partial class History {
         
         /// <summary>
-        /// gvPastRepairs control.
+        /// gvCurrentRepairs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPastRepairs;
+        protected global::System.Web.UI.WebControls.GridView gvCurrentRepairs;
         
         /// <summary>
-        /// sqlPastRepairs control.
+        /// HyperLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sqlPastRepairs;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        
+        /// <summary>
+        /// sqlCurrentRepairs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlCurrentRepairs;
         
         /// <summary>
         /// SqlStatus control.
