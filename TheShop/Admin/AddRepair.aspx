@@ -3,7 +3,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <br />
-    <h3>Add Repiar</h3>
+    <h3>Add Repair</h3>
     <br />
     <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DefaultMode="Insert" Width="100%" CellPadding="4" DataKeyNames="JobID" DataSourceID="sqlAddRepair" GridLines="None">   
         <Fields>

@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">The Shop</h1>
-                        <p class="intro-text">Collision and Glass</p>
+                        <p class="intro-text">Collision Center and Glass</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
