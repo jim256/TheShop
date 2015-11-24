@@ -4,14 +4,6 @@
     <h2>Repair Status</h2>
     <asp:Label ID="lblSuccess" runat="server"></asp:Label>
     <div class="input-group">
-        
-        <asp:LoginView ID="lvPIN" runat="server">
-            <LoggedInTemplate>
-                PIN: <asp:Label ID="Label1" text='<%# Bind("JobID") %>' runat="server"></asp:Label>
-            </LoggedInTemplate>
-        </asp:LoginView>
-        </br>
-        </br>
 
         <div class="col-md-6">
             <asp:DetailsView ID="dvStatus" Width="100%" runat="server" DataSourceID="sqlJobStatus" AutoGenerateRows="False" GridLines="None">
