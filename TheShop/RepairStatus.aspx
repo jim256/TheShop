@@ -27,6 +27,9 @@
                                 
                                 <small class="text-muted col-md-6 text-center">Est. Finish Date: <asp:Label runat="server" Text='<%# Bind("EstimatedFinishDt", "{0:d}") %>' ID="Label5"></asp:Label></small>
                                 <hr />
+                                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("CarYear") %>'></asp:Label>
+                                    <asp:Label ID="Label7" runat="server" Text='<%# Bind("CarMake") %>'></asp:Label>
+                                    <asp:Label ID="Label8" runat="server" Text='<%# Bind("CarModel") %>'></asp:Label>
                                 <h4>Notes</h4>
                                 <asp:Label runat="server" Text='<%# Eval("Notes").ToString().Replace(Environment.NewLine,"<br />") %>' ID="Label4"></asp:Label>
                               </div>
