@@ -72,7 +72,7 @@
                                 <td class="text-right" style="padding-bottom: 10px; font-size:20px;">8:00 AM - 5:30 PM</td>
                             </tr>
                             <tr>
-                                <td class="text-left" style="padding-right: 10px; padding-bottom: 12px; font-size:20px;">Tursday</td>
+                                <td class="text-left" style="padding-right: 10px; padding-bottom: 12px; font-size:20px;">Thursday</td>
                                 <td class="text-right" style="padding-bottom: 10px; font-size:20px;">8:00 AM - 5:30 PM</td>
                             </tr>
                             <tr>

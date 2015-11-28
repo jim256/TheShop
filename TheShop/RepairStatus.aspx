@@ -43,7 +43,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <asp:ListView ID="lstImages" runat="server" DataSourceID="sqlImages" GroupItemCount="3">
+            <asp:ListView ID="lstImages" runat="server" DataSourceID="sqlImages" GroupItemCount="3" OnItemDataBound="lstImages_ItemDataBound">
                 <EmptyDataTemplate>
                     <div>No images uploaded.</div>
                 </EmptyDataTemplate>
@@ -57,9 +57,12 @@
                 </GroupTemplate>
                
                 <ItemTemplate>
-                    <a href='<%# string.Format("images/Jobs/{0}", Eval("Name")) %>' target="_blank" >                        
-                            <asp:Image ID="img1" CssClass="col-md-4" runat="server" ImageUrl='<%# string.Format("images/Jobs/{0}", Eval("Name")) %>'></asp:Image>                                                  
-                    </a>
+                    <div class="col-md-4" style="margin-bottom:5px;">
+                        <a href='<%# string.Format("images/Jobs/{0}", Eval("Name")) %>' target="_blank" >                        
+                            <asp:Image ID="img1" Width="100%" runat="server" ImageUrl='<%# string.Format("images/Jobs/{0}", Eval("Name")) %>'></asp:Image>        
+                        </a>
+                        <asp:Button ID="Button1" CssClass="btn btn-xs btn-danger" style="margin:5px 0px;" runat="server" Text="Delete" OnClick="Button1_Click" CommandName='<%# Eval("Name") %>' CommandArgument='<%# Eval("ImageID") %>' />
+                    </div>
                 </ItemTemplate>
                 <LayoutTemplate>
                     <div runat="server" id="groupPlaceholderContainer" style="" border="0">
@@ -67,6 +70,7 @@
                                 </div>
                 </LayoutTemplate>
             </asp:ListView>
+            </div>
         </div>
         
         <asp:SqlDataSource ID="sqlJobStatus" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job] j inner join Status s ON s.StatusID = j.StatusID WHERE ([JobID] = @JobID)">
@@ -74,7 +78,7 @@
                 <asp:QueryStringParameter Name="JobID" QueryStringField="JobID" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="sqlImages" runat="server" ConnectionString='<%$ ConnectionStrings:csTheShopDB %>' SelectCommand="SELECT [Name], [Path] FROM [JobImages] WHERE ([JobID] = @JobID)">
+        <asp:SqlDataSource ID="sqlImages" runat="server" ConnectionString='<%$ ConnectionStrings:csTheShopDB %>' SelectCommand="SELECT [ImageID], [Name], [Path] FROM [JobImages] WHERE ([JobID] = @JobID)">
             <SelectParameters>
                 <asp:QueryStringParameter QueryStringField="jobID" DefaultValue="" Name="JobID" Type="Int32"></asp:QueryStringParameter>
             </SelectParameters>

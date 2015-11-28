@@ -83,5 +83,46 @@ namespace TheShop
                 lblSuccess.Text = "Cannot accept files of this type.";
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            SqlConnection conn = new SqlConnection(sqlJobStatus.ConnectionString);
+            SqlCommand del = new SqlCommand("delete from JobImages where ImageID = @ImageID", conn);
+            del.Parameters.AddWithValue("@ImageID", btn.CommandArgument);
+
+            try
+            {
+                conn.Open();
+                del.ExecuteNonQuery();
+
+                System.IO.File.Delete(Server.MapPath("~/Images/Jobs/") + btn.CommandName);
+                lblSuccess.Text = "Image deleted successfully!";
+
+                lstImages.DataBind();
+            }
+            catch(Exception ex)
+            {
+                lblSuccess.Text = ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
+        protected void lstImages_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            Button delButton = (Button)e.Item.FindControl("Button1");
+            if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                delButton.Visible = true;
+            }
+            else
+            {
+                delButton.Visible = false;
+            }
+        }
     }
 }
