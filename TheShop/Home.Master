@@ -67,9 +67,9 @@
                                     <li>
                                         <a class="page-scroll" href="#contact">Contact</a>
                                     </li>
-                                    <li>
+                                    <%--<li>
                                     <a class="page-scroll" href="Account/Login">Login</a>
-                                    </li>
+                                    </li>--%>
                                 </AnonymousTemplate>
                                 <LoggedInTemplate>
                                     <li>
@@ -101,6 +101,14 @@
                 <footer>
                     <div class="container text-center">
                         <p>Copyright &copy; Your Website 2014</p>
+                        <asp:LoginView runat="server" ViewStateMode="Disabled">
+                                <AnonymousTemplate>                                    
+                                    <a class="page-scroll" href="Account/Login">Login</a>                                    
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>                                    
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />                                    
+                                </LoggedInTemplate>
+                            </asp:LoginView>                         
                     </div>
                 </footer>
 
