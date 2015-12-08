@@ -11,7 +11,7 @@ namespace TheShop.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //DropDownList ddltemp = new DropDownList();
+            //DropDownList populated with one year ahead and 120 years past
             DropDownList ddlYear = (DropDownList)DetailsView1.FindControl("ddlYear");
             int curYear = DateTime.Now.Year;
             int newestYear = curYear + 1;

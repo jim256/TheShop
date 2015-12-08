@@ -100,7 +100,8 @@
             <!-- Footer -->
                 <footer>
                     <div class="container text-center">
-                        <p>Copyright &copy; Your Website 2014</p>
+                        <p>Copyright &copy; The Shop 2015</p>
+                        <p style="color:darkgrey; font-size:75%;">This project has been developed as part of a classroom learning experience by students at Utah State University. While efforts are made to ensure copyrights and intellectual property rights have not been violated, it is the responsibility of the organization using any classroom projects created by USU and its students to make sure the materials contained therein do not infringe the property rights (including without limitation rights of privacy and publicity, trademark rights, copyrights, patents, trade secrets, and licenses) of third parties.</p>                            
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                                 <AnonymousTemplate>                                    
                                     <a class="page-scroll" href="Account/Login">Login</a>                                    

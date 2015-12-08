@@ -12,8 +12,10 @@ namespace TheShop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // get repair id
             string repairID = Request.QueryString["repairID"];
 
+            // show image uploader if user is logged in
             if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 uploader.Visible = true;
@@ -24,6 +26,7 @@ namespace TheShop
             }
         }
 
+        //Image Uploader 
         protected void UploadButton_Click(object sender, EventArgs e)
         {
             Boolean fileOK = false;
@@ -84,6 +87,7 @@ namespace TheShop
             }
         }
 
+        // delete image
         protected void Button1_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;

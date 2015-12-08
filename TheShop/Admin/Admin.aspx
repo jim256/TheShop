@@ -5,7 +5,7 @@
     <br />
     <h3>Current Repairs</h3>
     <br />
-    <asp:Button ID="btnInsert" CssClass="btn btn-default" runat="server" Text="Add New Repair" Width="100%" OnClick="btnInsert_Click" />
+    <asp:Button ID="btnInsert" CssClass="btn btn-default btn-success" runat="server" Text="Add New Repair" Width="100%" OnClick="btnInsert_Click" />
     <asp:GridView ID="gvCurrentRepairs" CssClass="table table-striped table-condensed table-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="JobID" DataSourceID="sqlCurrentRepairs" GridLines="None" AllowPaging="True" AllowSorting="True">
         <Columns>
             <asp:TemplateField ShowHeader="False">
