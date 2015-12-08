@@ -296,8 +296,6 @@
     <Content Include="bin\TheShop.dll.config" />
     <None Include="Properties\PublishProfiles\TheShop.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Images\Jobs\car-crash-lawyer-121.jpg" />
-    <Content Include="Images\Jobs\iceman.jpg" />
     <Content Include="Images\z06.jpg" />
     <Content Include="html\index.html" />
     <Content Include="img\downloads-bg.JPG" />
@@ -557,7 +555,9 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\Jobs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -569,7 +569,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4047</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
