@@ -23,6 +23,7 @@
                     <div>
                         <label>Estimated Finish Date <span>(*)</span></label><br />
                         <asp:TextBox runat="server" Text='<%# Bind("EstimatedFinishDt") %>' ID="TextBox4" CssClass="form-control"></asp:TextBox>
+                        <asp:CompareValidator ID="valFinishLaterThanStart" runat="server" ErrorMessage="Please enter a finish date later than or equal to the received date" ControlToCompare="TextBox3" Operator="GreaterThanEqual" ControlToValidate="TextBox4" SetFocusOnError="true" Display="Dynamic" CssClass="text-danger"></asp:CompareValidator>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please select an estimated completion date" ControlToValidate="TextBox4" SetFocusOnError="true" Display="Dynamic" CssClass="text-danger"></asp:RequiredFieldValidator>
                         <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox4" PopupButtonID="TextBox4" />
                     </div>
@@ -32,7 +33,7 @@
                 <InsertItemTemplate>
                     <div>
                         <label>Status <span></span></label><br />
-                        <asp:DropDownList ID="DropDownStatus" CssClass="form-control" runat="server" DataSourceID="SqlStatus" DataTextField="Status" Width="24%" DataValueField="StatusID" SelectedValue='<%# Bind("StatusID") %>'></asp:DropDownList>                        
+                        <asp:DropDownList ID="DropDownStatus" CssClass="form-control" runat="server" DataSourceID="sqlStatus" DataTextField="Status" Width="24%" DataValueField="StatusID" SelectedValue='<%# Bind("StatusID") %>'></asp:DropDownList>                        
                     </div>
                 </InsertItemTemplate>
             </asp:TemplateField>
@@ -124,7 +125,7 @@
         </Fields>
     </asp:DetailsView>
     
-    <asp:SqlDataSource ID="sqlAddRepair" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job]" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [Notes], [StatusID], [CustFirstName], [CustLastName], [CarMake], [CarYear], [CarColor], [CarModel], [CustPhone], [CustEmail]) VALUES (@ReceivedDt, @EstimatedFinishDt, @Notes, @StatusID, @CustFirstName, @CustLastName, @CarMake, @CarYear, @CarColor, @CarModel, @CustPhone, @CustEmail);" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID, [CustFirstName] = @CustFirstName, [CustLastName] = @CustLastName, [CarMake] = @CarMake, [CarYear] = @CarYear, [CarColor] = @CarColor, [CarModel] = @CarModel, [CustPhone] = @CustPhone, [CustEmail] = @CustEmail WHERE [JobID] = @JobID" OnInserted="sqlAddRepair_Inserted">      
+    <asp:SqlDataSource ID="sqlAddRepair" runat="server" ConnectionString="<%$ ConnectionStrings:theshop_db %>" SelectCommand="SELECT * FROM [Job]" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [Notes], [StatusID], [CustFirstName], [CustLastName], [CarMake], [CarYear], [CarColor], [CarModel], [CustPhone], [CustEmail]) VALUES (@ReceivedDt, @EstimatedFinishDt, @Notes, @StatusID, @CustFirstName, @CustLastName, @CarMake, @CarYear, @CarColor, @CarModel, @CustPhone, @CustEmail);" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID, [CustFirstName] = @CustFirstName, [CustLastName] = @CustLastName, [CarMake] = @CarMake, [CarYear] = @CarYear, [CarColor] = @CarColor, [CarModel] = @CarModel, [CustPhone] = @CustPhone, [CustEmail] = @CustEmail WHERE [JobID] = @JobID" OnInserted="sqlAddRepair_Inserted">      
         <InsertParameters>
             <asp:Parameter DbType="Date" Name="ReceivedDt"></asp:Parameter>
             <asp:Parameter DbType="Date" Name="EstimatedFinishDt"></asp:Parameter>
@@ -140,5 +141,7 @@
             <asp:Parameter Name="CustEmail" Type="String"></asp:Parameter>
         </InsertParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Status] ORDER BY [StatusID]"></asp:SqlDataSource>
+
+    <asp:SqlDataSource ID="sqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:theshop_db %>" SelectCommand="SELECT * FROM [Status]"></asp:SqlDataSource>
+
 </asp:Content>

@@ -70,9 +70,9 @@ namespace TheShop
 
                         lstImages.DataBind();
                     }
-                    catch
+                    catch (Exception errorMessage)
                     {
-                        lblSuccess.Text = "Error when saving to database";
+                        lblSuccess.Text = "Error when saving to database: " + errorMessage;
                         conn.Close();
                     }
                 }

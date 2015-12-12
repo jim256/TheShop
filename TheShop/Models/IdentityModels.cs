@@ -30,7 +30,7 @@ namespace TheShop.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("csTheShopDB", throwIfV1Schema: false)
+            : base("theshop_db", throwIfV1Schema: false)
         {
         }
 

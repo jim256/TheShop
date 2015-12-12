@@ -84,7 +84,7 @@
     <br />
     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/Admin.aspx"><h3>Current Repairs</h3></asp:HyperLink>
 
-    <asp:SqlDataSource ID="sqlCurrentRepairs" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Job] j inner join Status s ON s.StatusID = j.StatusID WHERE j.StatusID = 6" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [Notes], [StatusID], [CustFirstName], [CustLastName], [CarMake], [CarYear], [CarColor], [CarModel], [CustPhone], [CustEmail]) VALUES (@ReceivedDt, @EstimatedFinishDt, @Notes, @StatusID, @CustFirstName, @CustLastName, @CarMake, @CarYear, @CarColor, @CarModel, @CustPhone, @CustEmail)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID, [CustFirstName] = @CustFirstName, [CustLastName] = @CustLastName, [CarMake] = @CarMake, [CarYear] = @CarYear, [CarColor] = @CarColor, [CarModel] = @CarModel, [CustPhone] = @CustPhone, [CustEmail] = @CustEmail WHERE [JobID] = @JobID">
+    <asp:SqlDataSource ID="sqlCurrentRepairs" runat="server" ConnectionString="<%$ ConnectionStrings:theshop_db %>" SelectCommand="SELECT * FROM [Job] j inner join Status s ON s.StatusID = j.StatusID WHERE j.StatusID = 6" DeleteCommand="DELETE FROM [Job] WHERE [JobID] = @JobID" InsertCommand="INSERT INTO [Job] ([ReceivedDt], [EstimatedFinishDt], [Notes], [StatusID], [CustFirstName], [CustLastName], [CarMake], [CarYear], [CarColor], [CarModel], [CustPhone], [CustEmail]) VALUES (@ReceivedDt, @EstimatedFinishDt, @Notes, @StatusID, @CustFirstName, @CustLastName, @CarMake, @CarYear, @CarColor, @CarModel, @CustPhone, @CustEmail)" UpdateCommand="UPDATE [Job] SET [ReceivedDt] = @ReceivedDt, [EstimatedFinishDt] = @EstimatedFinishDt, [Notes] = @Notes, [StatusID] = @StatusID, [CustFirstName] = @CustFirstName, [CustLastName] = @CustLastName, [CarMake] = @CarMake, [CarYear] = @CarYear, [CarColor] = @CarColor, [CarModel] = @CarModel, [CustPhone] = @CustPhone, [CustEmail] = @CustEmail WHERE [JobID] = @JobID">
         <DeleteParameters>
             <asp:Parameter Name="JobID" Type="Int32" />
         </DeleteParameters>
@@ -118,7 +118,7 @@
             <asp:Parameter Name="JobID" Type="Int32"></asp:Parameter>
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:csTheShopDB %>" SelectCommand="SELECT * FROM [Status] ORDER BY [Status]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:theshop_db %>" SelectCommand="SELECT * FROM [Status] ORDER BY [Status]"></asp:SqlDataSource>
 
 
 </asp:Content>

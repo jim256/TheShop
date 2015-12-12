@@ -294,7 +294,8 @@
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\TheShop.dll.config" />
-    <None Include="Properties\PublishProfiles\TheShop.pubxml" />
+    <None Include="Properties\PublishProfiles\theshop - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TheShopCC - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\z06.jpg" />
     <Content Include="html\index.html" />
@@ -342,7 +343,9 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
