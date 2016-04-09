@@ -8,9 +8,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <%--<h1 class="brand-heading">The Shop</h1>--%>
-                        <asp:Image ID="Image1" ImageUrl="img/THESHOPCOLISION.png" runat="server" Height="400px" Width="800px" />
-                        <%--<p class="intro-text">Collision Center and Glass</p>--%>
+                        <h1 class="brand-heading"><br /></h1>
+                        <%--<asp:Image ID="Image1" img class="img-responsive" ImageUrl="img/intro-bg.jpg" runat="server"  />--%>
+                        <p class="intro-text"><br /><br /><br /><br /></p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -27,7 +27,6 @@
                 <h2>About The Shop</h2>
                 <p>The Shop Collision Center and Glass gets your car looking like new at our great auto body shop in Long Beach, CA. Our neighborhood collision center offers quality glass and body repairs that can erase any visible sign of an accident. With an expert staff and fully-equipped auto body shop, we can take on the most severe damage from crashes and collisions and restore your vehicle to almost new condition. We also offer free 3-day car rentals through Enterprise while we repair your vehicle. Our shop does everything from dent removal and scratch repair to windshield replacement and repainting, ensuring a clean, new appearance for your damaged car. We value our customers' time and offer free mobile estimates at your location. </p>
                 <p>Check out pictures of past repairs on <a href="https://instagram.com/explore/locations/938540591/">Instagram</a> </p>
-                <p>More Text Here</p>
             </div>
         </div>
     </section>
